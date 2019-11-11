@@ -12,8 +12,9 @@ unsigned triggered = 0;
 const int threshold = 355;
 
 void setup() {
-pinMode(speakerPin, INPUT);
-Serial.begin(9600);
+  pinMode(speakerPin, INPUT);
+  pinMode(pushButton, INPUT);
+  Serial.begin(9600);
 }
 
 void loop() {
