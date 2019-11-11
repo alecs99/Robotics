@@ -1,4 +1,4 @@
-# **Laboratory Homeworks for the Introduction to Robotics Courses @ University of Bucharest (Unibuc Robotics)**
+# **Laboratory Homework for the Introduction to Robotics Courses @ University of Bucharest (Unibuc Robotics)**
 ## **1st Homework**
 **3PotentiometersRGB**: Simple Arduino code controlling an RGB led controlled using 3 potentiometers (using 1 for every color). <br />
 
