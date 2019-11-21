@@ -18,14 +18,8 @@ const int segSize = 8;
 const int noOfDisplays = 4;
 const int noOfDigits = 10;
 
-int dpState = LOW;
-int swState = LOW;
-int lastSwState = LOW;
-int switchValue;
 int xValue = 0;
 int yValue = 0;
-int currentNumber = 0;
-int previousNumber = 0;
 
 bool buttonPressed = false;
 bool joyMovedY = false;
@@ -79,11 +73,13 @@ void showDigit(int num) {
 void displayDP(byte decimalPoint){
   digitalWrite(segments[segSize-1], decimalPoint);
 }
+
 void clearSeg(){
    for (int i = 0; i < segSize; i++) {
       digitalWrite(segments[i], 0);
   }
 }
+
 void setup() {
   pinMode(pinSW, INPUT_PULLUP);
   for (int i = 0; i < segSize; i++){
@@ -93,6 +89,7 @@ void setup() {
   for (int i = 0; i < noOfDisplays; i++){
       pinMode(digits[i], OUTPUT);
   }
+  
   Serial.begin(9600);
 
 }
@@ -163,6 +160,4 @@ void loop() {
      showDigit(selectedSegment);
      displayNumber(values[selectedSegment]);
     }
-  
-
 }
