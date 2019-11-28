@@ -13,4 +13,4 @@
   **1.Play**: The play screen is showing the lives, level and score. After 5 seconds the level and score raise (1 level and score = level*3). After 10 seconds game ends, it will pop-up a message. To go back on main menu press joystick button again.<br>
   **2.Highscore**: The Highscore screen shows the highest score achieved and player's name. To go back on main menu press joystick button again.<br>
   **3.Settings**: In the settings you can change the starting level by using the X-axis. To go back on main menu press joystick button again.<br>
-   <a href="https://www.youtube.com/watch?v=pKKUXoMHFdI"width=">Video of the menu is here</a>
+   <a href="https://www.youtube.com/watch?v=pKKUXoMHFdI">Video of the menu is here</a>
