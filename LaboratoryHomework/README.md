@@ -9,8 +9,8 @@
 **4x7 Segment Controlled with a joystick**: Simple Arduino code controlling 4x7 segment display to change values between them. Using the joystick using the X-axis it moves between segments (it is marked the position by Decimal Point). When a segment is being selected by pressing the joystick button the decimal point turn off and then you can change the digit between Y-axis. Then you can select the value of the digit. You can cycle between again.
 
 ## **4th Homework**
-**LCD Menu Controlled with a joystick**: Simple Lcd Menu controlled with a joystick. In the menu section you can scroll between options using Y-axis (the selection is marked with '>'). To select an option press the joystick button. 
-  **1.Play**: The play screen is showing the lives, level and score. After 5 seconds the level and score raise (1 level and score = level*3). After 10 seconds game ends, it will pop-up a message. To go back on main menu press joystick button again.
-  **2.Highscore**: The Highscore screen shows the highest score achieved and player's name. To go back on main menu press joystick button again.
-  **3.Settings**: In the settings you can change the starting level by using the X-axis. To go back on main menu press joystick button again.
-   <a href="https://www.youtube.com/watch?v=pKKUXoMHFdI"width="240" height="180" border="10"></a>
+**LCD Menu Controlled with a joystick**: Simple Lcd Menu controlled with a joystick. In the menu section you can scroll between options using Y-axis (the selection is marked with '>'). To select an option press the joystick button. <br>
+  **1.Play**: The play screen is showing the lives, level and score. After 5 seconds the level and score raise (1 level and score = level*3). After 10 seconds game ends, it will pop-up a message. To go back on main menu press joystick button again.<br>
+  **2.Highscore**: The Highscore screen shows the highest score achieved and player's name. To go back on main menu press joystick button again.<br>
+  **3.Settings**: In the settings you can change the starting level by using the X-axis. To go back on main menu press joystick button again.<br>
+   <a href="https://www.youtube.com/watch?v=pKKUXoMHFdI"width=">Video of the menu is here</a>
