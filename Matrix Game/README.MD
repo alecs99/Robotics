@@ -9,10 +9,10 @@ Pong is a 2 player game similar to table tennis which features two paddles and a
 The menu is very simple: You have play tab in order to start the game. The highscore tab where you can see the highest score ever done (the highest score is saved in EEPROM). In the settings you can select the level of the game.
    
 ## Hardware: <br>
-a. 8x8 LED matrix
-b. LCD
-c. 2xJoystick
-d. MAX7219 Driver
-e. LED
-f. Arduino
-g. Cables
+a. 8x8 LED matrix <br>
+b. LCD <br>
+c. 2xJoystick <br>
+d. MAX7219 Driver <br>
+e. LED <br>
+f. Arduino <br>
+g. Cables <br>
