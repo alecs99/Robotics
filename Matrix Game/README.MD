@@ -8,7 +8,7 @@ There are multiple levels you can try: <br>
 
 The menu is very simple: You have play tab in order to start the game. The highscore tab where you can see the highest score ever done (the highest score is saved in EEPROM). In the settings you can select the level of the game. Also you can turn display on or off and change contrast. In the info tab you can see information about creator of the game, github link and name of the game.
 ## How to play: <br>
-In order to start the game you must press the button of the player's 1 joystick when the play tab is been selected. Next the game will start. Move the joystick on Y-axis in order to move the paddle in the front of the ball.
+In order to start the game you must press the button of the player's 1 joystick when the play tab is been selected. Next the game will start. Move the joystick on Y-axis in order to move the paddle in the front of the ball. In the LCD there will be displayed score,lives and level. Have fun!
 ## Hardware: <br>
 a. 8x8 LED matrix <br>
 b. LCD <br>
