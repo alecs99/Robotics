@@ -17,3 +17,4 @@ d. MAX7219 Driver <br>
 e. Arduino <br>
 f. Cables <br>
 g. 2xBreadboard <br>
+<a href="https://www.youtube.com/watch?v=mVl_6OpLql8">Video of the menu is here</a>
