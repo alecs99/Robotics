@@ -18,5 +18,6 @@ e. Arduino <br>
 f. Cables <br>
 g. 2xBreadboard <br>
 <a href="https://www.youtube.com/watch?v=mVl_6OpLql8">Video presenting the game is here</a>
-<a href="https://www.youtube.com/watch?v=mVl_6OpLql8">An image with the  final assembly</a>
+
+<a href="https://drive.google.com/open?id=1FL6eEFwPrHL9MFPk1oTyJvakSpnL2dt5">An image with the  final assembly</a>
 
