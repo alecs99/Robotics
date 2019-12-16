@@ -994,7 +994,7 @@ void lcdMenu(){
                          else if(movedValueSettings == 2){
                               xValueContrast = analogRead(pinX);
                                if( xValueContrast < minThreshold && joyMovedXContrast == false){       
-                                  if(lvlVal > 1){
+                                  if(contrast > 1){
                                            contrast--;
                                          }
                                          else{
