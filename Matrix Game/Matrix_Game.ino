@@ -358,10 +358,10 @@ void resetTable(){  // reset table
   wallHit = false;
   
 }
-void moveBallP1(){  //function to move the ball from player 1 to player 2
+void moveBallP1(){  //function to move the ball from player 1 to player 2. The delay was moved in order to make ball move slower
     if(paddleHit == 1 && !nextRound && !roundOver){
       lc.setLed(0, ballPos[0], ballPos[1], true);
-      delay(100);
+      delay(100);   
       lc.setLed(0, ballPos[0], ballPos[1], false);
       lc.setLed(0, ballPos[0]+1, ballPos[1], true);
       ballPos[0] = ballPos[0]+1;
@@ -484,7 +484,7 @@ void moveBallP1(){  //function to move the ball from player 1 to player 2
       
     }
 }
-void moveBallP2(){ //function to move ball from player 2 to player 1
+void moveBallP2(){ //function to move ball from player 2 to player 1. The delay was moved in order to make ball move slower
    if(paddleHit == 1 && !nextRound && !roundOver){
       lc.setLed(0, ballPos[0], ballPos[1], true);
       delay(100);
@@ -619,7 +619,7 @@ void moveBallP2(){ //function to move ball from player 2 to player 1
 void roundManager(int startMatch, bool &p1Win, bool &p2Win){  //manages every round if a player gets/loose a point or the ball hit the paddle and move on
    p1Win = false;
    p2Win = false;
-   movePaddle1();
+   movePaddle1(); // Used movePaddle multiple times in order to make game smoother
    movePaddle2();
   if(startMatch){
     startMatch = false;
@@ -736,12 +736,12 @@ void gameManager(int noOfLives, int multiplier, int &scoreP1, int &scoreP2, int 
     int start = true;
     player1Lives = noOfLives; //sets lives for the players
     player2Lives = noOfLives;
-    previousTime = currentTime;
     inGame(player1Lives, player2Lives, currentTime, scoreP1, scoreP2, level);   //prints on the LCD info 
     roundManager(true, p1Win, p2Win);  //starts the game for the first time
+    previousTime = currentTime - oldTime;
     while((player1Lives >= 0) && (player2Lives >= 0) && (currentTime - previousTime < 60)){   // while there are lives and time
-      inGame(player1Lives, player2Lives, currentTime-previousTime, scoreP1, scoreP2, level);  //refresh the info on the LCD
       currentTime = millis()/1000;  //get time
+      inGame(player1Lives, player2Lives, currentTime-previousTime, scoreP1, scoreP2, level);  //refresh the info on the LCD
       roundManager(false, p1Win, p2Win);
       if(p1Win){
         player2Lives--;
@@ -761,14 +761,10 @@ void gameManager(int noOfLives, int multiplier, int &scoreP1, int &scoreP2, int 
     }
     previousTime = currentTime;
     newGame = 0;
-      
     
   }
   
-   
-  
-
-void lcdMenu(){
+void lcdMenu(){   //function that manages info showed on the LCD 
  buttonRead(buttonPressed);
  Serial.println(buttonPressed);
  if(buttonPressed == false){
@@ -807,6 +803,7 @@ void lcdMenu(){
   lcdRow = arrowPosMenu[movedValue][1];
  }
  else if(buttonPressed == true){
+      previousTime = currentTime = 0;
       if(movedValue == 0){
         if(newGame == 1){
           if(lvlVal == 1){
@@ -919,21 +916,21 @@ void lcdMenu(){
                 lcd.print(">");
                 yValueSettings = analogRead(pinY);
                 if( yValueSettings > maxThreshold && joyMovedYSettings == false){
-                      if(movedValueSettings > 0){
-                          movedValueSettings--;
+                      if(movedValueSettings < 2){
+                          movedValueSettings++;
                        }
                         else{
-                         movedValueSettings = 2;
+                         movedValueSettings = 0;
                         }
                         joyMovedYSettings = true;
                      }
                   
                  if ( yValueSettings < minThreshold && joyMovedYSettings == false){
-                       if(movedValueSettings < 2){
-                         movedValueSettings++;
+                       if(movedValueSettings > 0){
+                         movedValueSettings--;
                         }
                         else{
-                         movedValueSettings = 0;
+                         movedValueSettings = 2;
                         }
                        joyMovedYSettings = true;
                      }
@@ -994,20 +991,20 @@ void lcdMenu(){
                          else if(movedValueSettings == 2){
                               xValueContrast = analogRead(pinX);
                                if( xValueContrast < minThreshold && joyMovedXContrast == false){       
-                                  if(contrast > 1){
-                                           contrast--;
+                                  if(contrast > 0){
+                                           contrast = contrast-10;
                                          }
                                          else{
-                                          contrast = 150;
+                                          contrast = 180;
                                          }
                                          joyMovedXContrast = true;
                                       }
                                       if ( xValueContrast > maxThreshold && joyMovedXContrast == false){
-                                        if(contrast < 150){
-                                           contrast++;
+                                        if(contrast < 180){
+                                            contrast = contrast+10;
                                          }
                                          else{
-                                          contrast = 1;
+                                          contrast = 0;
                                          }
                                          joyMovedXContrast = true;
                                       }
@@ -1052,5 +1049,6 @@ void setup() {
 }
 
 void loop() {
+
     lcdMenu();  
 }
