@@ -1018,6 +1018,7 @@ void lcdMenu(){   //function that manages info showed on the LCD
                     lcd.clear();
                     infoMenu();
                     buttonPressed = false;
+                    buttonMore = false;
               }
              
               buttonRead(exitSettings);
